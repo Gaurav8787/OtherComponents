@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     var timer:Timer!
     var progressVL:Float!
     
+    @IBOutlet weak var stepperobj: UIStepper!
+    
+    @IBOutlet weak var lblStepper: UILabel!
     @IBOutlet weak var lblSlider: UILabel!
     
     override func viewDidLoad() {
@@ -68,6 +71,10 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func steppervlchanged(_ sender: UIStepper) {
+        lblStepper.text = "\(stepperobj.value)"
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
